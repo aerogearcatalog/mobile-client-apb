@@ -1,6 +1,6 @@
-# mcs-server-apb
+# mobile-client-apb
 
-This APB sets up the [mobile client service](https://github.com/aerogear/mcs-server) for OpenShift.
+This APB sets up the [mobile client service](https://github.com/aerogear/mobile-client-service) for OpenShift.
 
 ## Local Development
 
