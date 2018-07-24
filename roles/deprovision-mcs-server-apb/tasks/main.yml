@@ -1,2 +1,29 @@
-- name: "Echo Deprovision"
-  shell:  "echo Deprovision"
+# mobile_client_service
+- openshift_v1_deployment_config:
+    name: '{{ mobile_client_service_deploymentconfig_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+- k8s_v1_service:
+    name: '{{ mobile_client_service_service_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+- k8s_v1_service:
+    name: '{{ mobile_client_service_proxy_service_name }}'
+    namespace: '{{ namespace }}'
+    state: absent  
+
+- openshift_v1_route:
+    name: '{{ mobile_client_service_route_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+
+- k8s_v1_service_account:
+    name: '{{ proxy_serviceaccount_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+- name: "Delete variant bindings"
+  shell:  oc delete secrets -l secretType==mobile-client-binding-secret -n '{{ namespace }}'
