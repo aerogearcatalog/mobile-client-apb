@@ -1,0 +1,16 @@
+- name: "Create sync server bind secret yaml file"
+  template:
+    src: bind_secret.yml
+    dest: /tmp/bind-secret.yaml
+
+- name: "Create binding secret"
+  shell: "oc create -f /tmp/bind-secret.yaml -n {{ namespace }}"
+
+- name: "Delete binding secret template file"
+  file: path=/tmp/bind-secret.yaml state=absent
+
+- name: Encode mobile-client-service credentials
+  asb_encode_binding:
+    fields:
+      credential: "mobile-client-service"
+  when: encode_asb_binding
