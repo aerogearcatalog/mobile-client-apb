@@ -1,3 +1,2 @@
-
-- debug:
-    msg: "Stub unbind"
+- name: "Echo Unbind"
+  shell:  echo Unbind
