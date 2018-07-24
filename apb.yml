@@ -1,17 +1,15 @@
 version: 1.0
 name: mobile-client-service-apb
-description: AeroGear mobile-client-service Server 2
+description: AeroGear mobile-client-service Server 
 bindable: True
 async: optional
 metadata:
-  displayName: Mobile Client Service 2
+  displayName: Mobile Client Service 3
   longDescription: "An APB deploying the AeroGear mobile-client-service Server with persistent storage and authentication through Openshift"
   imageUrl: "https://pbs.twimg.com/profile_images/1794440005/aerogear_icon-1_400x400.png"
   documentationUrl: "https://docs.aerogear.org/external/apb/mobile-client-service.html"
   providerDisplayName: "Red Hat, Inc."
-  dependencies:
-    - "docker.io/aerogear/mobile-client-service:latest"
-    - "docker.io/openshift/oauth-proxy:v1.1.0"
+  dependencies: []
   serviceName: mobile-client-service
   bindingsLimit: 2
 plans:

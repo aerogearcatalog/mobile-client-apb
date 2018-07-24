@@ -1,9 +1,7 @@
 
 # Global values used in all playbooks
-proxy_serviceaccount_name: "oauth-proxy"
-
 mobile-client-service_deploymentconfig_name: "mobile-client-service"
 mobile-client-service_route_name: "mobile-client-service"
 mobile-client-service_secret_name: "mobile-client-service-server"
 mobile-client-service_service_name: "mobile-client-service"
-mobile-client-service_protocol: https
+encode_asb_binding: true

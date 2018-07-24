@@ -1,2 +1,2 @@
 - name: "Echo Unbind"
-  shell:  echo Unbind
+  shell:  "echo Unbind"

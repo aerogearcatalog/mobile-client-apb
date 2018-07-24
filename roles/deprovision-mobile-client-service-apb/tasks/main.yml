@@ -1,2 +1,2 @@
 - name: "Echo Deprovision"
-  shell:  echo Deprovision
+  shell:  "echo Deprovision"
