@@ -93,7 +93,7 @@
 - name: "Wait for all mcs-server containers to become ready"
   shell: oc get pods --namespace={{ namespace }} --selector="deploymentconfig={{ mobile_client_service_deploymentconfig_name }}" -o jsonpath='{.items[*].status.containerStatuses[?(@.ready==true)].ready}'| wc -w
   register: mobile_client_service_result
-  until: mobile_client_service_result.stdout.find("1") != -1
+  until: mobile_client_service_result.stdout.find("2") != -1
   retries: 30
   delay: 5
 
