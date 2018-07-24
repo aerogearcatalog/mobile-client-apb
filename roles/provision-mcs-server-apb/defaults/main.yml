@@ -1,0 +1,8 @@
+# MCS Values
+mobile_client_service_image: " docker.io/aerogear/mobile-client-service"
+mobile_client_service_image_tag: "latest"
+mobile_client_service_port: 4000
+mobile_client_service_proxy_port: 4180
+# OAuth Proxy values
+proxy_image: "docker.io/openshift/oauth-proxy"
+proxy_image_tag: "v1.1.0"
