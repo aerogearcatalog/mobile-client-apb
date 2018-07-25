@@ -35,10 +35,8 @@
       - --provider=openshift
       - --openshift-service-account={{ proxy_serviceaccount_name }}
       - --upstream=http://localhost:{{ mobile_client_service_port }}
-      - >-
-        --openshift-sar={"namespace":"{{ namespace }}","resource":"deploymentconfigs","name":"mcs-server","verb":"update"}
+      - --openshift-sar={"namespace":"{{ namespace }}","resource":"deploymentconfigs","name":"mcs-server","verb":"update"}
       - --http-address=0.0.0.0:{{ mobile_client_service_proxy_port }}
-      - --skip-auth-regex=/rest/sender,/rest/registry/device,/rest/prometheus/metrics,/rest/auth/config
       - --https-address=
       - --cookie-secret=SECRET
     
