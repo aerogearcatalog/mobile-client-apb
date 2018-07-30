@@ -1,19 +1,21 @@
 version: 1.0
-name: mobile-client-service-apb
-description: AeroGear mobile-client-service Server 
+name: mcs-server-apb
+description: AeroGear mcs-server Server 
 bindable: True
 async: optional
 metadata:
-  displayName: Mobile Client Service 3
-  longDescription: "An APB deploying the AeroGear mobile-client-service Server with persistent storage and authentication through Openshift"
+  displayName: Mobile Client Service
+  longDescription: "An APB deploying the AeroGear mcs-server Server with persistent storage and authentication through Openshift"
   imageUrl: "https://pbs.twimg.com/profile_images/1794440005/aerogear_icon-1_400x400.png"
-  documentationUrl: "https://docs.aerogear.org/external/apb/mobile-client-service.html"
+  documentationUrl: "https://docs.aerogear.org/external/apb/mcs-server.html"
   providerDisplayName: "Red Hat, Inc."
-  dependencies: []
-  serviceName: mobile-client-service
+  dependencies: 
+      - "docker.io/openshift/oauth-proxy:v1.1.0"
+      - "docker.io/aerogear/mobile-client-service:latest"
+  serviceName: mcs-server
   bindingsLimit: 2
 plans:
   - name: default
-    description: Persistent deployment of mobile-client-service
+    description: Persistent deployment of mcs-server
     free: True
     parameters: []

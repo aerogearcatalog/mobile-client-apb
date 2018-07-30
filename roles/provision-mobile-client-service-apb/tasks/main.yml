@@ -1,8 +1,0 @@
-- name: "Echo Provision"
-  shell:  "echo Provision"
-
-- name: "Make data availble for binding"
-  asb_encode_binding:
-    fields:
-      namespace: "{{ namespace }}"
-  when: encode_asb_binding

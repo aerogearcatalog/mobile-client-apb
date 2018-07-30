@@ -1,2 +1,0 @@
-- name: "Echo Deprovision"
-  shell:  "echo Deprovision"
