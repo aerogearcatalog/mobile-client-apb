@@ -18,6 +18,7 @@
     containers:
     - name: mcs-server
       image: '{{ mobile_client_service_image }}:{{ mobile_client_service_image_tag }}'
+      imagePullPolicy: Always
       env:
       - name: SERVER_PORT
         value: "4000"
@@ -27,7 +28,7 @@
         container_port: 4000
     - name: mcs-server-oauth-proxy
       image: '{{ proxy_image }}:{{ proxy_image_tag }}'
-      imagePullPolicy: IfNotPresent
+      imagePullPolicy: Always
       ports:
       - containerPort: '{{ mobile_client_service_proxy_port }}'
         name: public
