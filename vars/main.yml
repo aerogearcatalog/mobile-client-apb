@@ -1,6 +1,5 @@
 # Global values used in all playbooks
-proxy_serviceaccount_name: "oauth-proxy"
-
+mobile_client_service_sa_name: "mobile-client-service"
 
 mobile_client_service_deploymentconfig_name: "mcs-server"
 mobile_client_service_proxy_service_name: "mcs-server-proxy"
