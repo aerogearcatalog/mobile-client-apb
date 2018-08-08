@@ -21,9 +21,14 @@
 
 
 - k8s_v1_service_account:
-    name: '{{ proxy_serviceaccount_name }}'
+    name: '{{ mobile_client_service_sa_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+- k8s_v1_secret:
+    name: '{{ mobile_client_service_secret_name }}'
     namespace: '{{ namespace }}'
     state: absent
 
 - name: "Delete variant bindings"
-  shell:  oc delete secrets -l secretType==mobile-client-binding-secret -n '{{ namespace }}'
+  shell:  oc delete secrets -l secretType=mobile-client-binding-secret -n '{{ namespace }}'

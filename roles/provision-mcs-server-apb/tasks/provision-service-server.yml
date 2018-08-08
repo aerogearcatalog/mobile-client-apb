@@ -14,7 +14,7 @@
     spec_template_metadata_labels:
       app: mcs-server
       service: mcs-server
-    spec_template_spec_service_account_name: '{{ proxy_serviceaccount_name }}'
+    spec_template_spec_service_account_name: '{{ mobile_client_service_sa_name }}'
     containers:
     - name: mcs-server
       image: '{{ mobile_client_service_image }}:{{ mobile_client_service_image_tag }}'
@@ -22,6 +22,8 @@
       env:
       - name: SERVER_PORT
         value: "4000"
+      - name: NAMESPACE
+        value: '{{ namespace }}'
       ports:
       - name: mcs-server
         protocol: TCP
@@ -34,12 +36,13 @@
         name: public
       args:
       - --provider=openshift
-      - --openshift-service-account={{ proxy_serviceaccount_name }}
-      - --upstream=http://localhost:{{ mobile_client_service_port }}
-      - --openshift-sar={"namespace":"{{ namespace }}","resource":"deploymentconfigs","name":"mcs-server","verb":"update"}
+      - --openshift-service-account={{ mobile_client_service_sa_name }}
+      - --upstream=http://localhost:{{ mobile_client_service_port }}/
+      - --openshift-sar=[{"namespace":"{{ namespace }}","resource":"secrets","name":"mcs-server","verb":"list"}, {"namespace":"{{ namespace }}","resource":"buildconfig","name":"mcs-server","verb":"create"}]
       - --http-address=0.0.0.0:{{ mobile_client_service_proxy_port }}
       - --https-address=
       - --cookie-secret=SECRET
+      - --cookie-httponly=false
     
 
 - name: create mcs-server service
