@@ -1,15 +1,15 @@
-- name: "Create OAuth Proxy Serviceaccount yaml"
+- name: "Create Service Serviceaccount yaml"
   template:
-    src: oauth-proxy-sa.yml.j2
-    dest: /tmp/oauth-proxy-sa.yaml
+    src: service-sa.yml.j2
+    dest: /tmp/service-sa.yaml
 
-- name: "Create OAuth Proxy Serviceaccount"
-  shell: "oc create -f /tmp/oauth-proxy-sa.yaml -n {{ namespace }}"
+- name: "Create Serviceaccount"
+  shell: "oc create -f /tmp/service-sa.yaml -n {{ namespace }}"
 
-- name: "Delete OAuth proxy Template File"
-  file: path=/tmp/oauth-proxy-sa.yaml state=absent
+- name: "Delete Service Serviceaccount Template File"
+  file: path=/tmp/service-sa.yaml state=absent
 
 - name: Give default user admin permissions
-  shell: 'oc policy add-role-to-user admin system:serviceaccount:{{ namespace }}:{{ proxy_serviceaccount_name }} -n {{ namespace }}'
+  shell: 'oc policy add-role-to-user admin -z {{ mobile_client_service_sa_name }} -n {{ namespace }}'
 
 - include_tasks: provision-service-server.yml
