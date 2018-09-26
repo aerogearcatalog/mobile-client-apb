@@ -3,6 +3,9 @@ name: mdc-server-apb
 description: AeroGear mdc-server Server 
 bindable: True
 async: optional
+tags:
+  - mobile-service
+  - mobile-client-enabled
 metadata:
   displayName: Mobile Developer Console 
   longDescription: "An APB deploying the AeroGear mdc-server Server with persistent storage and authentication through Openshift"
