@@ -1,0 +1,15 @@
+- name: "Create Service Serviceaccount yaml"
+  template:
+    src: service-sa.yml.j2
+    dest: /tmp/service-sa.yaml
+
+- name: "Create Serviceaccount"
+  shell: "oc create -f /tmp/service-sa.yaml -n {{ namespace }}"
+
+- name: "Delete Service Serviceaccount Template File"
+  file: path=/tmp/service-sa.yaml state=absent
+
+- name: Give default user admin permissions
+  shell: 'oc policy add-role-to-user admin -z {{ mobile_developer_console_sa_name }} -n {{ namespace }}'
+
+- include_tasks: provision-service-server.yml

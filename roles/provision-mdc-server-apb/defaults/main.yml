@@ -1,0 +1,8 @@
+# MCS Values
+mobile_developer_console_image: "docker.io/aerogearcatalog/mobile-client-service"
+mobile_developer_console_image_tag: "latest"
+mobile_developer_console_port: 4000
+mobile_developer_console_proxy_port: 4180
+# OAuth Proxy values
+proxy_image: "docker.io/openshift/oauth-proxy"
+proxy_image_tag: "v1.1.0"

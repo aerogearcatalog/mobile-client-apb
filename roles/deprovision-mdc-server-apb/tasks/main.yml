@@ -1,0 +1,34 @@
+# mobile_developer_console
+- openshift_v1_deployment_config:
+    name: '{{ mobile_developer_console_deploymentconfig_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+- k8s_v1_service:
+    name: '{{ mobile_developer_console_service_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+- k8s_v1_service:
+    name: '{{ mobile_developer_console_proxy_service_name }}'
+    namespace: '{{ namespace }}'
+    state: absent  
+
+- openshift_v1_route:
+    name: '{{ mobile_developer_console_route_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+
+- k8s_v1_service_account:
+    name: '{{ mobile_developer_console_sa_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+- k8s_v1_secret:
+    name: '{{ mobile_developer_console_secret_name }}'
+    namespace: '{{ namespace }}'
+    state: absent
+
+- name: "Delete variant bindings"
+  shell:  oc delete secrets -l secretType=mobile-developer-binding-secret -n '{{ namespace }}'
