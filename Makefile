@@ -1,5 +1,5 @@
 DOCKERHOST = docker.io
-DOCKERORG = aerogear
+DOCKERORG = aerogearcatalog
 IMAGENAME = mobile-client-service-apb
 TAG = latest
 USER=$(shell id -u)
