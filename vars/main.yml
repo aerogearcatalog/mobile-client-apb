@@ -1,10 +1,10 @@
 # Global values used in all playbooks
-mobile_client_service_sa_name: "mobile-client-service"
+mobile_developer_console_sa_name: "mobile-developer-console"
 
-mobile_client_service_deploymentconfig_name: "mcs-server"
-mobile_client_service_proxy_service_name: "mcs-server-proxy"
-mobile_client_service_route_name: "mcs-server"
-mobile_client_service_protocol: "https"
-mobile_client_service_secret_name: "mcs-server-server"
-mobile_client_service_service_name: "mcs-server"
+mobile_developer_console_deploymentconfig_name: "mdc-server"
+mobile_developer_console_proxy_service_name: "mdc-server-proxy"
+mobile_developer_console_route_name: "mdc-server"
+mobile_developer_console_protocol: "https"
+mobile_developer_console_secret_name: "mdc-server-server"
+mobile_developer_console_service_name: "mdc-server"
 encode_asb_binding: true

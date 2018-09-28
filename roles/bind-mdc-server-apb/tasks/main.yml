@@ -9,8 +9,8 @@
 - name: "Delete binding secret template file"
   file: path=/tmp/bind-secret.yaml state=absent
 
-- name: Encode mcs-server credentials
+- name: Encode mdc-server credentials
   asb_encode_binding:
     fields:
-      credential: "mcs-server"
+      credential: "mdc-server"
   when: encode_asb_binding

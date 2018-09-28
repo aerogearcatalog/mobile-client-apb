@@ -1,6 +1,6 @@
-# mobile-client-apb
+# mobile-developer-console-apb
 
-This APB sets up the [mobile client service](https://github.com/aerogear/mobile-client-service) for OpenShift.
+This APB sets up the [Mobile Developer Console](https://github.com/aerogear/mobile-developer-console) for OpenShift.
 
 ## Local Development
 
