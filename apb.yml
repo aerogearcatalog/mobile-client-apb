@@ -14,7 +14,7 @@ metadata:
   providerDisplayName: "Red Hat, Inc."
   dependencies: 
       - "docker.io/openshift/oauth-proxy:v1.1.0"
-      - "docker.io/aerogear/mobile-client-service:latest"
+      - "docker.io/aerogear/mobile-developer-console:latest"
   serviceName: mdc-server
   bindingsLimit: 2
 plans:
