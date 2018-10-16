@@ -5,6 +5,6 @@ mobile_developer_console_deploymentconfig_name: "mdc-server"
 mobile_developer_console_proxy_service_name: "mdc-server-proxy"
 mobile_developer_console_route_name: "mdc-server"
 mobile_developer_console_protocol: "https"
-mobile_developer_console_secret_name: "mdc-server-server"
+mobile_developer_console_secret_name: "mdc-server-secret"
 mobile_developer_console_service_name: "mdc-server"
 encode_asb_binding: true

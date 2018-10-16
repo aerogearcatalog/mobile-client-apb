@@ -1,0 +1,49 @@
+---
+
+- name: "Test|Check that all pods have been removed"
+  shell: oc get pods --namespace={{ namespace }} --selector="deploymentconfig in (mdc-server)" 2>&1
+  register: result
+  retries: 30
+  delay: 10
+  failed_when:
+    - '"No resources found." not in result.stdout'
+  until: '"No resources found." in result.stdout'
+
+- name: "Test|Check that the MDC App route has been removed"
+  shell: oc get route --namespace={{ namespace }} mdc-server 2>&1
+  register: result
+  retries: 30
+  delay: 10
+  failed_when:
+    - '"not found" not in result.stdout'
+  until: '"not found" in result.stdout'
+
+- name: "Test|Check that all services have been removed"
+  shell: oc get service --namespace={{ namespace }} {{ item }} 2>&1
+  register: result
+  retries: 30
+  delay: 10
+  failed_when:
+    - '"not found" not in result.stdout'
+  until: '"not found" in result.stdout'
+  with_items:
+    - '{{ mobile_developer_console_proxy_service_name }}'
+    - '{{ mobile_developer_console_service_name }}'
+
+- name: "Test|Check that all secrets have been removed"
+  shell: oc get secret --namespace={{ namespace }} {{ mobile_developer_console_secret_name }} 2>&1
+  register: result
+  retries: 30
+  delay: 10
+  failed_when:
+    - '"not found" not in result.stdout'
+  until: '"not found" in result.stdout'
+
+- name: "Test|Check that the service account has been removed"
+  shell: oc get serviceaccount --namespace={{ namespace }} {{ mobile_developer_console_sa_name }} 2>&1
+  register: result
+  retries: 30
+  delay: 10
+  failed_when:
+    - '"not found" not in result.stdout'
+  until: '"not found" in result.stdout'
