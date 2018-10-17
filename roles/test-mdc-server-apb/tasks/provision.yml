@@ -1,0 +1,15 @@
+
+---
+
+- name: "Test|Check that the MDC webpage is accessible"
+  uri:
+    url: "https://{{ mobile_developer_console_route.route.spec.host }}"
+    return_content: yes
+    validate_certs: no
+  register: webpage
+  retries: 20
+  delay: 10
+  failed_when:
+    - webpage.status == 403
+    - '"Log in with OpenShift" not in webpage.content'
+  until: '"Log in with OpenShift" in webpage.content'

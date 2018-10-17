@@ -1,0 +1,26 @@
+---
+- name: Test mobile-developer-console
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  vars_files:
+  - /opt/ansible/vars/main.yml
+  - /opt/ansible/vars/test.yml
+
+  roles:
+  - role: ansible.kubernetes-modules
+    install_python_requirements: no
+  - role: ansibleplaybookbundle.asb-modules
+  
+  post_tasks:
+  - name: create project for namespace
+    openshift_v1_project:
+      name: '{{ namespace }}'
+  - name: Run the provision role
+    include_role: name=provision-mdc-server-apb
+  - name: Test provision role
+    include_role: name=test-mdc-server-apb tasks_from=provision.yml
+  - name: Run the deprovision role
+    include_role: name=deprovision-mdc-server-apb
+  - name: Test deprovision role
+    include_role: name=test-mdc-server-apb tasks_from=deprovision.yml
