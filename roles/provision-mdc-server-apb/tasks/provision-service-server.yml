@@ -24,6 +24,8 @@
         value: "4000"
       - name: NAMESPACE
         value: '{{ namespace }}'
+      - name: ENABLE_BUILD_TAB
+        valye: '{{ mobile_developer_console_enable_build_tab }}'
       ports:
       - name: mdc-server
         protocol: TCP
