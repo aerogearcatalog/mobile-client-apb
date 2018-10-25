@@ -25,7 +25,7 @@
       - name: NAMESPACE
         value: '{{ namespace }}'
       - name: ENABLE_BUILD_TAB
-        valye: '{{ mobile_developer_console_enable_build_tab }}'
+        value: '{{ mobile_developer_console_enable_build_tab }}'
       ports:
       - name: mdc-server
         protocol: TCP
@@ -40,7 +40,7 @@
       - --provider=openshift
       - --openshift-service-account={{ mobile_developer_console_sa_name }}
       - --upstream=http://localhost:{{ mobile_developer_console_port }}/
-      - --openshift-sar=[{"namespace":"{{ namespace }}","resource":"secrets","name":"mdc-server","verb":"list"}, {"namespace":"{{ namespace }}","resource":"buildconfig","name":"mdc-server","verb":"create"}]
+      - --openshift-sar=[{"namespace":"{{ namespace }}","resource":"secrets","name":"mdc-server","verb":"list"}]
       - --http-address=0.0.0.0:{{ mobile_developer_console_proxy_port }}
       - --https-address=
       - --cookie-secret=SECRET
