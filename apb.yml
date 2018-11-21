@@ -21,3 +21,4 @@ plans:
     description: Persistent deployment of mdc-server
     free: True
     parameters: []
+    metadata: {}
