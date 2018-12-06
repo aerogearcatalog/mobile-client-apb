@@ -1,6 +1,6 @@
 # MCS Values
 mobile_developer_console_image: "docker.io/aerogear/mobile-developer-console"
-mobile_developer_console_image_tag: "master"
+mobile_developer_console_image_tag: "1.0.0-alpha"
 mobile_developer_console_port: 4000
 mobile_developer_console_proxy_port: 4180
 mobile_developer_console_enable_build_tab: false
