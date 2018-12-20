@@ -1,6 +1,7 @@
-FROM ansibleplaybookbundle/apb-base
+FROM openshift3/apb-base:v3.11
 
-LABEL "com.redhat.apb.spec"=\
+LABEL com.redhat.component="mobile-developer-console-apb" \
+      com.redhat.apb.spec=\
 "dmVyc2lvbjogMS4wCm5hbWU6IG1kYy1zZXJ2ZXItYXBiCmRlc2NyaXB0aW9uOiBBZXJvR2VhciBt\
 ZGMtc2VydmVyIFNlcnZlcgpiaW5kYWJsZTogVHJ1ZQphc3luYzogb3B0aW9uYWwKdGFnczoKICAt\
 IG1vYmlsZS1zZXJ2aWNlCm1ldGFkYXRhOgogIGRpc3BsYXlOYW1lOiBNb2JpbGUgRGV2ZWxvcGVy\
@@ -13,8 +14,15 @@ YXBiL21kYy1zZXJ2ZXIuaHRtbCIKICBwcm92aWRlckRpc3BsYXlOYW1lOiAiUmVkIEhhdCwgSW5j\
 LiIKICBzZXJ2aWNlTmFtZTogbWRjLXNlcnZlcgogIGJpbmRpbmdzTGltaXQ6IDIKcGxhbnM6CiAg\
 LSBuYW1lOiBkZWZhdWx0CiAgICBkZXNjcmlwdGlvbjogUGVyc2lzdGVudCBkZXBsb3ltZW50IG9m\
 IG1kYy1zZXJ2ZXIKICAgIGZyZWU6IFRydWUKICAgIHBhcmFtZXRlcnM6IFtdCiAgICBtZXRhZGF0\
-YToge30K"
-
+YToge30K" \
+      name="mobile/mobile-developer-console-apb" \
+      io.k8s.display-name="Mobile Developer Console APB" \
+      io.k8s.description="An APB (Ansible Playbook Bundle) that deploys the Mobile Developer Console on OpenShift through the service catalog" \
+      description="An APB (Ansible Playbook Bundle) that deploys the Mobile Developer Console on OpenShift through the service catalog" \
+      summary="An APB (Ansible Playbook Bundle) that deploys the Mobile Developer Console on OpenShift through the service catalog" \
+      usage="This image is used by the Automation Broker in OpenShift to provision the Mobile Developer Console" \
+      maintainer="Red Hat Mobile team" \
+      version="1.0.0"
 
 COPY playbooks /opt/apb/actions
 COPY roles /opt/ansible/roles
