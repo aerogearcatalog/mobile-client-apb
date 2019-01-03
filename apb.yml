@@ -1,19 +1,16 @@
 version: 1.0
 name: mdc-server-apb
-description: AeroGear mdc-server Server 
+description: AeroGear mdc-server Server
 bindable: True
 async: optional
 tags:
   - mobile-service
 metadata:
-  displayName: Mobile Developer Console 
+  displayName: Mobile Developer Console
   longDescription: "An APB deploying the AeroGear mdc-server Server with persistent storage and authentication through Openshift"
   imageUrl: "https://pbs.twimg.com/profile_images/1794440005/aerogear_icon-1_400x400.png"
   documentationUrl: "https://docs.aerogear.org/external/apb/mdc-server.html"
   providerDisplayName: "Red Hat, Inc."
-  dependencies: 
-      - "docker.io/openshift/oauth-proxy:v1.1.0"
-      - "docker.io/aerogear/mobile-developer-console:latest"
   serviceName: mdc-server
   bindingsLimit: 2
 plans:
