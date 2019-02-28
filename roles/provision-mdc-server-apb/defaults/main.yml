@@ -4,6 +4,7 @@ mobile_developer_console_image_tag: "master"
 mobile_developer_console_port: 4000
 mobile_developer_console_proxy_port: 4180
 mobile_developer_console_enable_build_tab: false
+mobile_developer_console_docs_prefix: "https://docs.aerogear.org/aerogear/latest"
 # OAuth Proxy values
 proxy_image: "docker.io/openshift/oauth-proxy"
 proxy_image_tag: "v1.1.0"
