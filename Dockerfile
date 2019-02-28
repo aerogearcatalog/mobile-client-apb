@@ -16,6 +16,7 @@ IG1kYy1zZXJ2ZXIKICAgIGZyZWU6IFRydWUKICAgIHBhcmFtZXRlcnM6IFtdCiAgICBtZXRhZGF0\
 YToge30K"
 
 
+COPY playbooks /opt/apb/project
 COPY playbooks /opt/apb/actions
 COPY roles /opt/ansible/roles
 COPY vars /opt/ansible/vars
