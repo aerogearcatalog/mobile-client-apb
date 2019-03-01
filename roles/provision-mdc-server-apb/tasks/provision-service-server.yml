@@ -26,6 +26,8 @@
         value: '{{ namespace }}'
       - name: ENABLE_BUILD_TAB
         value: '{{ mobile_developer_console_enable_build_tab }}'
+      - name: DOCS_PREFIX
+        value: '{{ mobile_developer_console_docs_prefix }}'
       ports:
       - name: mdc-server
         protocol: TCP
