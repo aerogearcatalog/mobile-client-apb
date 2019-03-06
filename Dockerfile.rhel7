@@ -143,14 +143,14 @@ b3ZpZGVyRGlzcGxheU5hbWU6ICJSZWQgSGF0LCBJbmMuIgogIHNlcnZpY2VOYW1lOiBtZGMtc2Vy\
 dmVyCiAgYmluZGluZ3NMaW1pdDogMgpwbGFuczoKICAtIG5hbWU6IGRlZmF1bHQKICAgIGRlc2Ny\
 aXB0aW9uOiBQZXJzaXN0ZW50IGRlcGxveW1lbnQgb2YgbWRjLXNlcnZlcgogICAgZnJlZTogVHJ1\
 ZQogICAgcGFyYW1ldGVyczogW10KICAgIG1ldGFkYXRhOiB7fQo=" \
-      name="mobile/mobile-developer-console-apb" \
+      name="mobile-1-tech-preview/mobile-developer-console-apb" \
       io.k8s.display-name="Mobile Developer Console APB" \
       io.k8s.description="An APB (Ansible Playbook Bundle) that deploys the Mobile Developer Console on OpenShift through the service catalog" \
       description="An APB (Ansible Playbook Bundle) that deploys the Mobile Developer Console on OpenShift through the service catalog" \
       summary="An APB (Ansible Playbook Bundle) that deploys the Mobile Developer Console on OpenShift through the service catalog" \
       usage="This image is used by the Automation Broker in OpenShift to provision the Mobile Developer Console" \
       maintainer="Red Hat Mobile team" \
-      version="1.0.0"
+      version="1.0.1"
 
 COPY playbooks /opt/apb/project
 COPY playbooks /opt/apb/actions
