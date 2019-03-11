@@ -17,7 +17,7 @@
     spec_template_spec_service_account_name: '{{ mobile_developer_console_sa_name }}'
     containers:
     - name: mdc-server
-      image: '{{ mobile_developer_console_image }}:{{ mobile_developer_console_image_tag }}'
+      image: '{{ mobile_developer_console_image }}'
       imagePullPolicy: Always
       env:
       - name: SERVER_PORT
@@ -33,7 +33,7 @@
         protocol: TCP
         container_port: 4000
     - name: mdc-server-oauth-proxy
-      image: '{{ proxy_image }}:{{ proxy_image_tag }}'
+      image: '{{ proxy_image }}'
       imagePullPolicy: Always
       ports:
       - containerPort: '{{ mobile_developer_console_proxy_port }}'
@@ -47,7 +47,7 @@
       - --https-address=
       - --cookie-secret=SECRET
       - --cookie-httponly=false
-    
+
 
 - name: create mdc-server service
   k8s_v1_service:
