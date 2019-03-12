@@ -15,7 +15,26 @@ metadata:
   bindingsLimit: 2
 plans:
   - name: default
-    description: Persistent deployment of mdc-server
+    description: This plan should be used in most use cases
     free: True
+    metadata:
+      displayName: Default
     parameters: []
-    metadata: {}
+  - name: custom
+    description: This plan can be used if images need to be customized
+    free: True
+    metadata:
+      displayName: User Specified
+    parameters:
+      - name: custom_mobile_developer_console_image
+        title: Mobile Developer Console container image
+        description: The image to use for the Mobile Developer Console (You shouldn't need to change this)
+        default: docker.io/aerogear/mobile-developer-console:master
+        type: string
+        required: True
+      - name: custom_proxy_image
+        title: OpenShift OAuth Proxy container image
+        description: The image to use for the OAuth Proxy (You shouldn't need to change this)
+        default: docker.io/openshift/oauth-proxy:v1.1.0
+        type: string
+        required: True

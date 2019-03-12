@@ -1,10 +1,10 @@
-# MCS Values
-mobile_developer_console_image: "docker.io/aerogear/mobile-developer-console"
-mobile_developer_console_image_tag: "master"
 mobile_developer_console_port: 4000
 mobile_developer_console_proxy_port: 4180
 mobile_developer_console_enable_build_tab: false
 mobile_developer_console_docs_prefix: "https://docs.aerogear.org/aerogear/latest"
-# OAuth Proxy values
-proxy_image: "docker.io/openshift/oauth-proxy"
-proxy_image_tag: "v1.1.0"
+
+default_mobile_developer_console_image: docker.io/aerogear/mobile-developer-console:master
+mobile_developer_console_image: '{{ custom_mobile_developer_console_image | default(default_mobile_developer_console_image, true) }}'
+
+default_proxy_image: docker.io/openshift/oauth-proxy:v1.1.0
+proxy_image: '{{ custom_proxy_image | default(default_proxy_image, true) }}'
