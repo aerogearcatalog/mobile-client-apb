@@ -29,7 +29,7 @@ plans:
       - name: custom_mobile_developer_console_image
         title: Mobile Developer Console container image
         description: The image to use for the Mobile Developer Console (You shouldn't need to change this)
-        default: docker.io/aerogear/mobile-developer-console:master
+        default: docker.io/aerogear/mobile-developer-console:1.0.3
         type: string
         required: True
       - name: custom_proxy_image
