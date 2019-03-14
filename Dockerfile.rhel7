@@ -164,7 +164,7 @@ CiAgICAgICAgdHlwZTogc3RyaW5nCiAgICAgICAgcmVxdWlyZWQ6IFRydWUK" \
       summary="An APB (Ansible Playbook Bundle) that deploys the Mobile Developer Console on OpenShift through the service catalog" \
       usage="This image is used by the Automation Broker in OpenShift to provision the Mobile Developer Console" \
       maintainer="Red Hat Mobile team" \
-      version="1.0.1"
+      version="1.0.3"
 
 COPY playbooks /opt/apb/project
 COPY playbooks /opt/apb/actions
