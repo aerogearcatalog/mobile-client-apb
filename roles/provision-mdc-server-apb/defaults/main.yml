@@ -3,7 +3,7 @@ mobile_developer_console_proxy_port: 4180
 mobile_developer_console_enable_build_tab: false
 mobile_developer_console_docs_prefix: "https://docs.aerogear.org/aerogear/latest"
 
-default_mobile_developer_console_image: docker.io/aerogear/mobile-developer-console:master
+default_mobile_developer_console_image: docker.io/aerogear/mobile-developer-console:1.0.2
 mobile_developer_console_image: '{{ custom_mobile_developer_console_image | default(default_mobile_developer_console_image, true) }}'
 
 default_proxy_image: docker.io/openshift/oauth-proxy:v1.1.0
